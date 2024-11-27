@@ -4,9 +4,9 @@ author: "Jason"
 date: "`r Sys.Date()`"
 output: 
   rmdformats::robobook:
-    toc_depth: 2
+    toc_depth: 4
     toc_float: 
-      collapsed: FALSE
+      collapsed: TRUE
     use_bookdown: TRUE
 fig_caption: TRUE
 ---
@@ -22,30 +22,7 @@ pre, code {white-space:pre !important; overflow-x:auto}
 
 ## The BLERF Lab Handbook
 
-## Table of Contents
-1. [Introduction](#Introduction)
-2. [Territory, Acknowledgements, Support (SEE JASON)](#Territory,-Acknowledgements,-Support)
-3. [Research Projects in the Lab](#Research-Projects-in-the-Lab)
-4. [Core Values (SEE ALL)](#Core-Values)
-5. [Prospective Students (SEE BLERF LAB MEMBERS)](#Prospective-Students)
-6. [Onboarding Checklist](#Onboarding-Checklist)
-7. [Key Research Project Steps](#Key-Research-Project-Steps)
-8. [Code of Conduct (SEE ALL)](#Code-of-Conduct)
-9. [Communication](#Communication)
-10. [Meetings](#Meetings)
-11. [Roles and Responsibilities](#Roles-and-Responsibilities)
-12. [Data Management](#Data-Management)
-13. [Guides and Resources](#Guides-and-Resources)
-14. [Funding(SEE ALL)](#Funding)
-15. [Preregistration](#Preregistration)
-16. [BLERF Server](#BLERF-Server)
-17. [Authorship Conventions](#Authorship-Conventions)
-18. [Data Ownership Conventions](#Data-Ownership-Conventions)
-19. [Networking](#Networking)
-20. [Career & Personal Development](#Career-&-Personal-Development)
-21. [UBCO Campus Contacts and Resources](#UBCO-Campus-Contacts-and-Resources)
-22. [Other Resources](Other-Resources)
-    - Paying Taxes in Canada
+**NOTE** This is a work in progress!  
 
 * * *
 
@@ -58,10 +35,10 @@ This lab handbook is a living document that sets out our community guidelines, v
 * * *
 
 ## Territory, Acknowledgements, Support
+
 We respectfully acknowledge that we live and work on the traditional and unceded territory of [Syilx Okanagan](https://www.syilx.org/about-us/syilx-nation/) people. We are guests in this territory and through co-developed collaborations we strive continually to foster respectful and reciprocal relations with our Syilx hosts and with other Indigenous communities in the region. You can view the traditional territories of Indigenous Peoples [here](https://native-land.ca/). 
 
 Find more information about UBC’s Declaration of Truth and Reconciliation commitments [here](https://ok.ubc.ca/about/indigenous-engagement/), The Truth and Reconciliation Commission of Canada's Calls to Action [here](https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/indigenous-people/aboriginal-peoples-documents/calls_to_action_english2.pdf), and the Declaration on the Rights of Indigenous Peoples Act (DRIPA) [here](https://www2.gov.bc.ca/gov/content/governments/indigenous-people/new-relationship/united-nations-declaration-on-the-rights-of-indigenous-peoples). 
-
 
 * * *
 
@@ -80,7 +57,7 @@ Our lab handbook was inspired by:
 
 Contributors to different versions of this document over the years include: 
 
-Jordan Katchen, Jason Pither, Liam Johnson
+Jason Pither, Liam Johnson, Jordan Katchen, Hannah Pilat, Bront&eum; Shelton, Sophia Kast, Mary-Paz Mane, Fabio Mologni
 
 The BLERF Lab is extremely grateful for the financial and logistical support it has received over the years.
 
