@@ -20,7 +20,7 @@ options(scipen = 999)
 pre, code {white-space:pre !important; overflow-x:auto}
 ```
 
-# The BLERF Lab Handbook
+## The BLERF Lab Handbook
 
 ## Table of Contents
 1. [Introduction](#Introduction)
