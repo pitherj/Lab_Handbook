@@ -1,5 +1,5 @@
 ---
-title: "Example reproducible workflow"
+title: "BLERF Lab Handbook"
 author: "Jason"
 date: "`r Sys.Date()`"
 output: 
@@ -20,311 +20,469 @@ options(scipen = 999)
 pre, code {white-space:pre !important; overflow-x:auto}
 ```
 
+# The BLERF Lab Handbook
 
-# Welcome
+## Table of Contents
+1. [Introduction](#Introduction)
+2. [Territory, Acknowledgements, Support (SEE JASON)](#Territory,-Acknowledgements,-Support)
+3. [Research Projects in the Lab](#Research-Projects-in-the-Lab)
+4. [Core Values (SEE ALL)](#Core-Values)
+5. [Prospective Students (SEE BLERF LAB MEMBERS)](#Prospective-Students)
+6. [Onboarding Checklist](#Onboarding-Checklist)
+7. [Key Research Project Steps](#Key-Research-Project-Steps)
+8. [Code of Conduct (SEE ALL)](#Code-of-Conduct)
+9. [Communication](#Communication)
+10. [Meetings](#Meetings)
+11. [Roles and Responsibilities](#Roles-and-Responsibilities)
+12. [Data Management](#Data-Management)
+13. [Guides and Resources](#Guides-and-Resources)
+14. [Funding(SEE ALL)](#Funding)
+15. [Preregistration](#Preregistration)
+16. [BLERF Server](#BLERF-Server)
+17. [Authorship Conventions](#Authorship-Conventions)
+18. [Data Ownership Conventions](#Data-Ownership-Conventions)
+19. [Networking](#Networking)
+20. [Career & Personal Development](#Career-&-Personal-Development)
+21. [UBCO Campus Contacts and Resources](#UBCO-Campus-Contacts-and-Resources)
+22. [Other Resources](Other-Resources)
+    - Paying Taxes in Canada
 
-This website is geared towards researchers at any career stage who wish to improve the reproducibility of their research.
+* * *
 
-The guidelines provided here make use of tools that we have found useful, and for which we've identified helpful online resources: R/RStudio, Git/Github, OSF, and Zotero. However, other tools can be used to equal effect for achieving the overall goal of reproducibility. 
+## Introduction
 
-The website is meant to be succinct, and used as a form of checklist. Throughout, we provide links to external resources that will help implement the steps of the workflow.  Where available, we link to resources from the University of British Columbia, the authors’ home institution.
+Hello and welcome to The Biodiversity and Landscape Ecology Research Facility (BLERF) Lab at UBC's Okanagan campus!
 
-This work is licenced under the [Creative Commons Attribution-Non Commercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This lab handbook is a living document that sets out our community guidelines, values, shared principles, and expectations. If you’re here because you’re curious about the lab (woohoo!), the handbook will give you a sense of who we are and whether our research community is one you’d like to become part of. All new BLERF members should read the handbook upon joining the lab.
 
-**Citation**
+* * *
 
-Please use the following for citing this document:
+## Territory, Acknowledgements, Support
+We respectfully acknowledge that we live and work on the traditional and unceded territory of [Syilx Okanagan](https://www.syilx.org/about-us/syilx-nation/) people. We are guests in this territory and through co-developed collaborations we strive continually to foster respectful and reciprocal relations with our Syilx hosts and with other Indigenous communities in the region. You can view the traditional territories of Indigenous Peoples [here](https://native-land.ca/). 
 
-Pither, J., Vis-Dunbar, M. (2024). An example workflow for a reproducible and discoverable research project. https://pitherj.github.io/example_reproducible_workflow/
+Find more information about UBC’s Declaration of Truth and Reconciliation commitments [here](https://ok.ubc.ca/about/indigenous-engagement/), The Truth and Reconciliation Commission of Canada's Calls to Action [here](https://www2.gov.bc.ca/assets/gov/british-columbians-our-governments/indigenous-people/aboriginal-peoples-documents/calls_to_action_english2.pdf), and the Declaration on the Rights of Indigenous Peoples Act (DRIPA) [here](https://www2.gov.bc.ca/gov/content/governments/indigenous-people/new-relationship/united-nations-declaration-on-the-rights-of-indigenous-peoples). 
 
-All source files are available at [https://github.com/pitherj/example_reproducible_workflow/tree/main](https://github.com/pitherj/example_reproducible_workflow/tree/main).  
 
-This is a work in progress, and we welcome your feedback! Please email Jason if you have any (jason [dot] pither (at) ubc [dot] ca).
+* * *
 
-**Need help?**
+This handbook is licened under [Creative Commons Attribution Non-Commercial 4.0 License](https://creativecommons.org/licenses/by-nc/4.0/)
 
-- Look for relevant [workshops at UBCO (R, Git and GitHub, Bash, Copyright…)](https://csc.ok.ubc.ca/workshops/). 
-- Book an appointment with a [UBC Okanagan Research Data Consultant](https://csc.ok.ubc.ca/consultations/research-data-consultation/) 
-- Request a lab workshop by emailing the CSC csc.ok@ubc.ca
 
-***
+* * *
 
-# Pre-project checklist {#preproject}
+Our lab handbook was inspired by:
 
-- [have Git installed on local computer](https://happygitwithr.com/install-git)
-- [have GitHub account](https://happygitwithr.com/github-acct)
-- [have ORCID account](https://orcid.org/)
-- [have OSF account](https://osf.io/)
-- [ensure “R” and RStudio are installed](https://happygitwithr.com/install-r-rstudio)
-- [have Zotero account](https://www.zotero.org/)
-- [Zotero desktop app installed](https://www.zotero.org/)
-- (optional) [Zotero browser connector activated](https://www.zotero.org/support/kb/safari_compatibility)
-- (optional) [Zotfile plugin installed](http://zotfile.com/)
+* The awesome handbooks of the [Makeability Lab](https://docs.google.com/document/d/1YiiDsfpiolpXjUTj8xWrQwQQUzqrfqT9bocOpaYDrtI/mobilebasic#heading=h.r95vtmm1kkbh) and [The Music Lab](https://handbook-public.themusiclab.org/welcome).
+* [The Lab Book](https://loriemerson.net/books/the-lab-book-situated-practices-in-media-studies/) drafts by Lori Emerson, Jussi Parikka, and Darren Wershler.
+* [MLab in the Humanities](https://maker.uvic.ca/about/) documentation by Jentery Sayers.
+* The article “[How to Write a Lab Handbook](https://thebiologist.rsb.org.uk/biologist-features/how-to-write-a-lab-handbook)” by Samuel Mehr and his curated collection of [lab handbooks on Github](https://github.com/samuelmehr/labhandbooks).
+* The [AMP Lab](https://amplab.ok.ubc.ca/) Handbook
 
-***
+Contributors to different versions of this document over the years include: 
 
-# Project setup {#setup}
+Jordan Katchen, Jason Pither, Liam Johnson
 
-An overview of the workflow ecosystem is provided below, illustrating how the different tools connect to each other.  
+The BLERF Lab is extremely grateful for the financial and logistical support it has received over the years.
 
-```{r img-with-knitr, echo=FALSE, fig.align='center', out.width='100%', fig.cap='Workflow ecosystem'}
-knitr::include_graphics("more/ecosystem_diagram.png")
-```
+Research activities in the lab are primarily supported by core funding from the Natural Sciences and Engineering Council of Canada's Discovery Grant program.
 
-An overview flow-chart of the entire workflow is provided in this [PDF document](more/full_example_workflow_diagram.pdf).
+Funds from the Canada Foundation for Innovation supported the construction and equipping of the lab. 
 
-***
+We are grateful for ongoing logistical support from UBC's Advanced Research Computing group, and the library and Centre for Scholarly Communication at UBC Okanagan.
 
-## RStudio + Github
+* * *
 
-Before going further, be sure to read through this [UBC website](https://ubc-library-rc.github.io/rdm/) that provides guidelines on file naming, file formats, directory structures, and `readme` files. 
+## Areas of Research
 
-For help with the following steps, consult the [happygitwithr.com website](https://happygitwithr.com/connect-intro).
+Here in the BLERF lab, our research often spans many disciplines and areas of research. Below we have listed a few of our current interests. However, we are always open to exploring new areas of research!
 
-- create GitHub repository for the project (can optionally be private for now)
-- (OPTIONAL) can use [`workflowr` package](https://workflowr.github.io/workflowr/articles/wflow-09-workshop.html) to facilitate following steps
-- create new RStudio project, enabling version control by connecting to GitHub repo
-- enable `renv` option to facilitate [package management](https://docs.posit.co/ide/user/ide/guide/environments/r/renv.html)
-- set up an appropriate directory structure, as illustrated in the example below
+* The Historical/biogeographical perspectives on associations between plants and mycorrhizal fungi
+* Landscape connectivity and biodiversity conservation
+* Historical and biogeographical influences over local communities
+* Invasive species ecology and biocontrol
+* Increasing the openness and transparency of scientific research via the open science movement
+ 
+## Lab Mission and Core Values
 
-```{r, echo=FALSE, fig.align='center', out.width='100%', fig.cap='Example project directory structure'}
-knitr::include_graphics("more/example_directory_structure.png")
-```
+**Mission** 
 
-- while any number of directory structures are suitable, the key feature is ensuring the `rawdata` folder holds only raw data, and ideally is write-protected (read-only) once all data have been acquired.  Once you're sure you've acquired all your raw data, here is how you can achieve this on a Mac / Unix / Linux based computer:
+* Our lab strives to 
 
-Click on the "terminal" tab in your RStudio console window, and type the following command (assuming your raw data directory name is "rawdata"):
+**Core Values**
+ 
+* *Respectful community*: The BLERF lab aims to provide an inclusive and safe environment for all community members. We encourage open, honest communication. While we may disagree at times, each member has a responsibility to act respectfully and each member will be treated with respect.  
+ 
+ * *Student agency* : We believe students deserve the opportunity to take up self-directed research or pursue knowledge mobilization initiatives on which they themselves are leaders or curators, supported by resources and mentorship, and given appropriate credit.
 
-```
-chmod a=r rawdata
-```
+ * *Transparency, Openness, and Reproducibility*: 
 
-- initialize a `_README.md` or `_README.txt` file for root- and each sub-directory (can be fleshed out later)
-- use the [`usethis` R package](https://usethis.r-lib.org/index.html) and its `edit_git_ignore` function to create a `.gitignore` file and populate it with text from this [template](https://github.com/github/gitignore/blob/main/R.gitignore).
-- **NOTE** Make sure you ignore all sensitive and copyrighted files, and it’s recommended to ignore data files; for example, you could add “rawdata/” to your .gitignore file to ignore everything in that directory.
+ * *Generosity*: Generosity underpins our practice. We are committed to lifting each other up and celebrating each other’s successes. 
+ 
+ * *Work-life balance*: We value setting clear work boundaries and making time for friends, family, and hobbies outside of academic life.
 
-***
+* * *
 
-## OSF
+## Prospective Students
 
-Find out about the functionality of the [OSF platform here](https://help.osf.io/?_gl=1*lewbss*_ga*MzMzMjg1Nzg1LjE3MDQ4MzkwOTQ.*_ga_YE9BMGGWX8*MTcwNzI0NTM4OS4yNS4xLjE3MDcyNDY5MzQuNTkuMC4w).
+### Personal Finances 
+ 
+* How Much you make?  
 
-UBC subscribes to [OSF Institutions](https://guides.library.ubc.ca/OSF), which allows UBC students, staff, and faculty to [log in to OSF with their CWL credentials](https://guides.library.ubc.ca/osf). 
+    * Minimum stipends: 
+        * MSc: $21,000 (to be increased in 2025)
+        * PhD: $24,000 (to be increased in 2025)
 
-You can explore other UBC-affiliated OSF projects [here](https://osf.io/institutions/ubc).  
+* **A portion of this minimum stipend comes from Teaching Assistantships** 
 
-- create new OSF project (or component on existing project) for managing this project, materials and for serving as a central “hub” for all project components (e.g. github, google drive etc...)
-- optionally organize your project (with subcomponents) such that one of the components (even the main project) could eventually serve as the archive site for your project;  
-**NOTE** this is especially useful if you wish to be able to provide an anonymized link to your study materials during the manuscript review process 
-- bookmark the project website in your browser
-- include all collaborators as contributors, order names appropriately, tailor their permissions
-- provide useful keywords/tags to enhance discoverability
-- edit the “metadata” entries appropriately
-- include an informative project description on home Wiki page
-- create other Wiki pages e.g. to provide estimated project timeline, extra information etc…
-- your OSF project can be linked to pre-registration when it is submitted (see below)
-- optionally connect [“add-ons” to OSF](https://help.osf.io/article/377-add-ons-api-home-page) such as Zotero and Github
+* **Tuition costs are taken from the minimum stipend, so your "take home pay" will be the minimum stipend minus the costs of tuition**. 
 
-***
+* [COGS cost of living estimator](https://cogsubco.shinyapps.io/UBCO-CoGS_Expense_Calculator/)
 
-## Zotero
+* Rough idea of rent in Kelowna as of 2023: 
 
-- create a Zotero library (or [shared group library](https://www.zotero.org/groups/) if collaborating) NOTE: store attachments (PDFs) on LOCAL or OneDrive (not on Zotero cloud)
-- use add-ons such as Zotfile and [Zotero better-notes](https://github.com/windingwind/zotero-better-notes) to manage citations and notes
+    * \$800-1000 for 1 bedroom in a shared house (with a shared bathroom)
+    * \$1200+ for a master bedroom in a shared house (with a private bathroom)
+    * \$1500+ for a studio/microsuite
+    * \$1800+ for a 1 bedroom apartment
+    * \$2500+ for a 2 bedroom apartment
 
-***
+* Tuition:
+    * Master's and Doctoral:
+        * $2000 per semester (\$6000 per year). 
+        
+        * International: ca. $3200 per semester ($9600 per year)  
+        **HP: If an international student could please confirm this based on their experience that would be great**
 
-# Pre-registration {#prereg}
+**Kelowna**
+* Links to info on Kelowna?
+* Weather?
+    * Clothing
+        * Waterproof/water resistant boots for winter
+        * Winter jacket, options for layering
+        * Toque (hat for cold weather), mittens/gloves
 
-Pre-registering a study is one of the most effective ways to improve the rigour and reliability of research. Feel free to consult the following articles for background: 
+**British Columbia**
 
-- Hardwicke, T.E. & Wagenmakers, E.-J. (2023). Reducing bias, increasing transparency and calibrating confidence with preregistration. Nat Hum Behav, 7, 15–26. [https://doi.org/10.1038/s41562-022-01497-2](https://doi.org/10.1038/s41562-022-01497-2). 
+**Canada**
+* International Students?
+    * VISA?
+    * Ensure that you enroll in BCMSP as soon as you arrive in BC (it takes 2-3 months to kick in). Additionally, depending on your home country and how much time you plan to spend back there, you should keep some sort of insurance there as BCMSP may not cover much in the event you need medical care while back home.
+    * 
 
-- Nosek, B.A., Beck, E.D., Campbell, L., Flake, J.K., Hardwicke, T.E., Mellor, D.T., et al. (2019). Preregistration Is Hard, And Worthwhile. Trends in Cognitive Sciences, 23, 815–818. [https://doi.org/10.1016/j.tics.2019.07.009](https://doi.org/10.1016/j.tics.2019.07.009). 
+* * *
 
-- Nosek, B.A., Ebersole, C.R., DeHaven, A.C. & Mellor, D.T. (2018). The preregistration revolution. Proc. Natl. Acad. Sci. U.S.A., 115, 2600–2606. [https://doi.org/10.1073/pnas.1708274114](https://doi.org/10.1073/pnas.1708274114).  
+## Onboarding Checklist
 
->**IMPORTANT** [Pre-registration is a plan, not a prison.](https://www.cos.io/blog/preregistration-plan-not-prison).  While a primary goal of pre-registration is to anticipate all of the decisions that may need to be made during the course of the study, this is rarely possible.  The key point is to be transparent and open in your manuscript about what, if any, aspects of the study deviated from the plans laid out in the pre-registration.  It will RARELY be the case that everything goes as planned!   
+New BLERF members should aim to complete all the tasks in the following  list. **HP: add a point about doing tax documents and direct deposit in WorkDay, registering in thesis course each semester?**
 
-***
+Please refer to the [**Guides and Resources**](#Guides-and-Resources) section of this handbook if you are unfamiliar with any of the tools and topics mentioned below.
 
-## Part-I: Preparation
+- [ ] Read through this entire handbook.
+- [ ] [Create an OSF account](https://help.osf.io/article/271-create-an-osf-account), and work with supervisor to set up an OSF project.
+- [ ] Set up [Zotero account](https://www.zotero.org/user/register/) and share a library with supervisor.
+- [ ] Remind Jason to invite you to the lab's [Slack](https://slack.com) channel.
+- [ ] Ensure you have a good cloud storage backup solution for all work.
+    * OSF can serve as one backup location. 
+    * A second backup location is the BLERF server, and request that your supervisor set you up for this.
 
-- Consult the [OSF registration page](https://help.osf.io/article/330-welcome-to-registrations) to learn about pre-registrations.
-- Book an appointment with a [UBC Okanagan Research Data Consultant](https://csc.ok.ubc.ca/consultations/research-data-consultation/)
-- Consult with [a UBC subject librarian](https://library.ok.ubc.ca/about/contact/mathew-vis-dunbar/) for literature searching and licencing considerations
-- Consult this [UBC website for an introduction to research data management](https://ubc-library-rc.github.io/rdm/)
+## Key Research Project Steps
 
-***
+The diagram below outlines the key steps in an ideal BLERF research project: 
 
-## Part-II.i: (OPTIONAL): Analysis to inform study-design
+![Research project steps][1]
 
-- create annotated R Markdown script that walks through the process of [generating simulated data](https://stirlingcodingclub.github.io/simulating_data/index.html) for the purpose of working out the study design and analysis plan
-- can use data from previous research to inform data generation
-- [simulate data for power analysis](https://julianquandt.com/post/power-analysis-by-data-simulation-in-r-part-i/) to inform study design
-- your finalized analysis plan, with example code for simulated data, can be linked in pre-registration (either through GitHub, or via HTML or PDF file)
+A more thorough Example of a Reproducible Workflow is found [here](https://pitherj.github.io/example_reproducible_workflow/index.html).
 
-***
+* * *
 
-## Part-II.ii: Data Management Plan
+## Code of Conduct
 
-- once you’ve thought carefully about study design and data, consult these [UBC guidelines](https://ubc-library-rc.github.io/rdm/content/06_Data_Management_Plan.html) on creating a Data Management Plan (DMP).
-- be sure to plan and employ proper protocols for sensitive data.
-- store this DMP in your OSF project
+*Diversity is a fact* 
 
-***
+Just like life is diverse, so are we. Everyone is welcomed independently of their culture, religion, race and colour, sexual orientation, gender identity, differing abilities, and mental health status, personal and academic background, age, economic status or body appearance. 
 
-## Part-III: Submission
+*Inclusion is an act* 
 
-- complete & submit [OSF pre-registration](https://help.osf.io/article/345-create-registrations) & optionally link to OSF project
-- optionally include knitted document showing power analysis etc…
-- the pre-registration can be kept private for a time period, and this is recommended if you wish to retain anonymity during review process; - you can create an anonymized link to the pre-registration for use during review process
-- bookmark the registration in your browser (it will have a DOI)
+ - Use the preferred pronouns if you know someone. Otherwise, prefer a gender-neutral language.
+ - Put an effort in correctly pronouncing people’s names. There is no shame in mispronouncing names, as long as you try your best. 
+ - Allow personal space, and respect others' privacy. Be self-conscious of your language and behaviour.
+ - Develop a land acknowledgment and identify your positionality (you can consult this UBC [resource](https://guides.library.ubc.ca/distance-research-xwi7xwa/landacknowledgements))
+ - If you realize you've erred, apologize quickly and move forward. 
+ - But most importantly, ***be kind***. 
 
-***
+*Equity is the outcome*
 
-# Analysis & Writing {#analysis}
+We hope to create a mutually supportive community, a safe and inclusive environment, a place where you can feel at home. You are valued, and your ideas and work are valued. 
 
-You can optionally write your manuscript in markdown (e.g. using the RStudio editor), in which case you can take advantage of version control that you already have set up in your RStudio project.  
+Other key considerations:
 
-If you choose to do this, you can also (optinally) install and use:  
-- the [`rticles` R package](https://pkgs.rstudio.com/rticles/articles/rticles.html) to write manuscripts using journal markdown templates within a markdown editor (including RStudio)  
-- the [`trackdown` package](https://cran.r-project.org/web/packages/trackdown/vignettes/trackdown-workflow.html) for collaborative editing of your markdown manuscript via Google docs.  
-- use citation tools within the RStudio editor (Zotero is embedded in RStudio under the [“Visual” editing mode](https://rstudio.github.io/visual-markdown-editing/citations.html)).  
+ - Inclusion/accessibility during meetings (lab and others as needed)
+    - closed captioning for talks 
+    - varied ways to participate
+    - accommodating dietary restrictions and preferences
+    - other
+ - Health & safety
+ - Ethics
+ - Sustainability
+ - Professionalism
 
-If you opt to write your manuscript using a word-processing software (e.g. Word), then:   
-- frequently (e.g. daily) upload your working (binary file) document to OSF to ensure backup and versioning. 
-- use a Zotero plugin to facilitation citation management   
-- use the ["check-out / check-in" function on OSF](https://help.osf.io/article/280-checkout-files) to manage collaborative editing. 
+* * *
 
-***
+## Communication
 
-## RStudio + Github
+### Email 
 
-- [frequent and regular versioning (commit/push/pull)](https://docs.posit.co/ide/user/ide/guide/tools/version-control.html#integrations) of coding & markdown authoring work to GitHub
-- **REMEMBER**: ensure that only non-sensitive data and those with acceptable license get pushed to GitHub
-- any sensitive data only store locally, backed up on private OSF component
-- beware of storage limitations on [GitHub](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage) & [OSF](https://help.osf.io/article/386-project-storage)
-- keep the “renv” lock file up to date for [package management](https://docs.posit.co/ide/user/ide/guide/environments/r/renv.html) 
+* We use email for all official correspondence (e.g. regarding milestones, pay, HR issues, etc...) and/or longer communications.
 
-***
+### Slack 
 
-## OSF 
+* All lab members are required to create a [Slack](https://slack.com/) account and join the BLERF Lab Slack channel. This searchable platform is how we communicate with each other day-to-day. The lab has a main channel (#general) that includes every member associated with the lab. There exists many other channels and sub-channels where students can ask project-related questions, share updates, documents, etc. 
 
-In your day-to-day work, which involves regular backing up of files/data (some of which are not suitable for Github, and are better stored on OSF), you can optionally make use of the [`osfr` package](https://github.com/ropensci/osfr) to interact with OSF project, including uploading files.
+* Tap on "Add Channel" to browse existing channels you may not have been added to, or to create a new channel. DM groups can also be created with up to 8 individuals.  
 
-- frequent regular backup / versioning of binary files (e.g. Word docs)
-- use Wiki pages to provide progress updates (e.g. on a timeline Wiki)
-- use other Wiki pages for updating any other relevant details
-- use as location for backup storage of data
+### Google Calendar
 
-***
+* We schedule using the Google calendar, which you can find [here](https://calendar.google.com/calendar/embed?src=m6li4d1nmkrvipp1a93jn5lko0%40group.calendar.google.com&ctz=America%2FVancouver).
 
-## Zotero 
+* * *
 
-- make use of the handy [Zotero better-notes](https://github.com/windingwind/zotero-better-notes) to manage notes for your citations
-- keep Zotero library up to date and clean regularly
-- use the RStudio Visual Editor to [insert citations from your Zotero library](https://rstudio.github.io/visual-markdown-editing/citations.html)
+## Meetings
 
-***
+### Lab Meetings
 
-# Dissemination {#dissemination}
+* During the school year, the BLERF lab hosts a weekly lab meeting. These lab meetings are typically 60 minutes and cover a range of topics. The meeting schedule can be found at the [BLERF OSF](https://osf.io/64cwf/wiki/Lab%20meetings/).  
 
-> If you wish to remain anonymous for any part of the manuscript submission/review stage, then you must go through all your files to ensure that you’ve removed any information that could identify you and/or co-authors. Do not submit a pre-print if you wish to remain anonymous. Currently there are no pre-print servers that enable posting of anonymized preprints.
+* During the summer, these lab meetings typically become more sporadic as lab members are away on vacation or busy with fieldwork.  
 
-***
+* Often students and faculty from other labs will join these weekly meetings.  
 
-## RStudio + Github
+### One-on-one Meetings 
 
-- knit the manuscript to PDF (journal may have a direct markdown submission option)
-- ensure it rendered correctly, including symbols, figures, formatting, citations etc..
-- double-check / update `_DATA-DICTIONARY.md` file for both rawdata and outdata directories and ensure `_README.md` files in root and rawdata directories up to date and correct.
-- create a “zip” file of all contents of your project directory and sub-directories. Example code for this that you can type in your RStudio command console (assuming you don’t need to exclude any sensitive files or data): 
+* Apart from the weekly lab meeting, members of the BLERF lab usually have individual weekly meetings with Jason. 
 
-```
-zip("myproject.zip", dir(full.names = TRUE, recursive = TRUE))
-```
+* Students are expected to generate an agenda in advance of these meetings. This agenda helps ensure that we make the most of our meeting time. 
+* Meeting agendas and notes should be posted on OSF for accountability (for both student and supervisor)
 
-***
+* * *
 
-## OSF 
+## Roles and Responsibilities
 
-- clean up 
-create new OSF private project that will eventually serve as the public project archive
-- add all the relevant information as described in “Project Setup”
-    - metadata, wiki pages, etc… (but don’t put info in wiki pages that could be used to identify authors)
-- copy all directories and files, including the “zip” file (excluding any sensitive data) from local RStudio project folder (repo) into the main OSF project storage (this makes it easier for someone to download materials).
-- in the OSF project settings, create a “view only” link, and select option to anonymize
-- this link is what you’ll provide with manuscript submission to journal
-- use a different browser to double-check anonymity of OSF project
-- ideally, have colleague independently double-check project reproducibility from OSF materials 
+### Lab Meeting Organizer
 
-***
+* Responsible for organizing and scheduling lab meetings.  
 
-## Manuscript submission 
+* Relevant OSF Wiki: [Here](https://osf.io/64cwf/wiki/Lab%20meetings/). 
 
-- be sure to state that the study was pre-registered, and provide the link (DOI) to the pre-registration
-- explain any deviations from pre-registered plans
-- **if you are NOT concerned with anonymity**, optionally submit a preprint to a preprint server like [EcoEvoRxiv](https://ecoevorxiv.org/) or [OSF Preprints](https://osf.io/preprints)
-- consider submitting your manuscript to an [open access](https://scholcomm.ubc.ca/open-access/)
-- regardless, ensure you can post a penultimate version of your manuscript for free, public access
+* Currently assigned: TDB 
 
-***
+### Social Outing Organizer
 
-## Manuscript revisions
+* Responsible for organizing and scheduling lab get-togethers outside of work.  
 
-- complete revisions using versioning as usual (either via Github of writing using markdown, or OSF if not)
-- update all project materials accordingly 
+* Relevant OSF Wiki: [Here](https://osf.io/64cwf/wiki/Lab%20Outings/). 
 
-***
+* Currently assigned: TBD  
 
-# Project archiving {#archiving}
+* * *
 
-Once your manuscript has been accepted for publication, make final preparations for archiving all relevant materials to ensure reproducibility and discoverability.  
+## Data Management
 
-## Option 1: OSF
+Here in the BLERF lab, we strive to always adhere to the current best practices in data management.
 
-Examples of archives on OSF are provided [here](https://osf.io/jfy35/) and [here](https://osf.io/ujnw2/).  
+Below are a few links to useful resources:  
 
-- if you designed your original OSF project such that it (or a component) could serve as the archive, then proceed by making the OSF archive project public
-- note it will create a permanent DOI for this public archive
-- choose appropriate copyright license; unsure? Consult with [subject librarian for literature searching and licencing considerations](https://library.ok.ubc.ca/about/contact/mathew-vis-dunbar/)
-- ensure contributor (author) order on the archive is appropriate for the work done on the archived materials, e.g. scripts / data (not the main manuscript itself)
-- include a clear statement illustrating how the archive should be cited; **NOTE**: this archive should have its own unique citation (separate from main paper) 
-- ensure all the metadata are complete
-- use "READ ME FIRST" as the heading at the top of the main wiki page, like in [this example](https://osf.io/ujnw2/), then include in that wiki page all information and instructions relevant for reproducibility, including: 
-  - include a link / DOI to published paper
-  - include a link to GitHub repo (or alternatively, connect your Github repo using the [add-on feature](https://help.osf.io/article/377-add-ons-api-home-page))
-  - describe any data that may not be included in archive e.g. due to sensitive nature etc...
-  - optionally enrich the home wiki page content with e.g. links to video abstracts, media interviews, etc...
-  - provide a link to the public Zotero library associated with paper
-- ensure all project archive components are view/read only
-- maximize discoverability with useful tags
-- use [OSF analytics](https://help.osf.io/article/289-view-project-analytics) to track site visits and downloads
-- optionally link the Zotero library to the archive, so that viewers can link directly to cited papers (whose DOI links appear in add-on)
-- bookmark this archive in your browser
+* [List of resources](https://tinyurl.com/rdm-resources) maintained by UBC's Advanced Research Computing. 
 
-***
+* Use this [online tool](https://assistant.portagenetwork.ca) to draft a data management plan.
 
-## Option 2: Borealis Dataverse
+We generally archive all data and code on our [BLERF Dataverse](https://borealisdata.ca/dataverse/blerf_students).
 
-Examples of archives on UBC's Dataverse are [here](https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/KWJTFU) and [here](here).  
+This is a basic checklist for archiving on Dataverse:
 
-Instructions for archiving materials on UBC's Dataverse are provided [here](https://ubc-library-rc.github.io/rdm/content/05_Deposit_to_Dataverse.html).  
+**Curation Checklist for Biodiversity and Landscape Ecology Research Facility Dataverse Collection**
 
-Note that you can [connect your Github repository to the Dataverse archive](https://borealisdata.ca/guides/en/latest/admin/integrations.html#github). 
+Prepared by Eugene Barsky in May 2023, research.data@ubc.ca 
 
-***
+- [ ]  Dataset has been submitted to the proper dataverse collection
+- [ ]  All files described in the documentation are included in the dataset
+- [ ]  Supporting documentation is included
+- [ ]  Files open properly and contents appear as expected
+- [ ]  Links to related publications, datasets, and other resources are included. For related publications, use " Related Publications" metadata field
+- [ ]  The submission includes a README file that describes the dataset or a data study
+- [ ]  ORCIDs are listed for authors if available
+- [ ]  Geospatial Metadata is included (if available) to ensure geospatial discovery on [Lunaris](https://www.lunaris.ca/)
 
-## Option 3: OSF + Dataverse
 
-For an example of a blended approach, here's a [main archive is on OSF](https://osf.io/jfy35/), and for the purpose of ensuring institutional affiliation and memory, a skeleton archive containing only metadata is available on UBC's [Dataverse](https://borealisdata.ca/dataset.xhtml?persistentId=doi:10.5683/SP3/I6BHSX).  
+Relevant one-pager guides:
 
-***
+- [Quick Guide to UBC Dataverse](https://osf.io/sczv5) – Something brief, just to get you started.  
+- [Creating a README for Your Dataset](https://osf.io/aqxw3)
 
-# Cleanup {#cleanup}
+- [Admin Guide to UBC Dataverse](https://osf.io/2f5wg) – A deeper dive into how to create and customize your own dataverses and sub-dataverses, design widgets, permissions, themes and guestbooks.
 
-- remove any unnecessary files/components from your OSF projects
-- make sure all URL links are working
-- in the home Wiki page of the hub project, put a clear statement of project status near top (e.g. indicating the project has wrapped up, with date)
-- sign out of OSF and double check that only those files/components that should be publicly visible are
+* * *
+
+## Guides and Resources
+
+Below are several resources for popular tools used extensively within the BLERF lab. Consider familiarizing yourself with any unfamiliar topics.
+
+* [OSF](https://osf.io/dashboard): A project management software used extensively in the BLERF lab.
+    * [OSF 101 Video](https://www.youtube.com/watch?v=dLEIhJESIQA) -- Video covering the basics of OSF.
+    * [Getting started on the OSF](https://help.osf.io/article/342-getting-started-on-the-osf) -- Beginners guide to OSF.
+    * [UBC OSF Guide](https://guides.library.ubc.ca/OSF) -- How to log into OSF using UBC's institutional login.
+* [Zotero](https://www.zotero.org/): A reference managing software. Zotero is designed to store, manage, and cite bibliographic references.
+    * [Zotero Guides](https://www.zotero.org/support/) 
+    * Usefull Addons: [Zotfile](http://zotfile.com/)
+    * [Zotero Beginners Guide Video](https://www.youtube.com/watch?v=JG7Uq_JFDzE) -- Basic beginners guide on how to set up and use Zotero.
+* [Slack](https://slack.com/): A messaging program. Typically, the BLERF team uses Slack for informal day-to-day communication.
+    * [BLERF Slack Workspace](blerflab.slack.com)
+* [R (programming language)](https://www.r-project.org/): The main programming language used in the BLERF lab.
+    * [R Programming Tutorial Video](https://www.youtube.com/watch?v=_V8eKsto3Ug&t=712s) -- A beginner's guide to the programming language R.
+    * [Jason's BIOL 202 R Tutorials](https://ubco-biology.github.io/BIOL202/index.html) -- A number of tutorials covering the basics of R (programming language). These tutorials have been created by Dr. Pither for his BIOL 202 Introduction to Biostatistics course.
+    * [R for Data Science](https://r4ds.had.co.nz/index.html) -- Textbook on how to do data science with R.
+* [Markdown](https://www.markdownguide.org/getting-started/): A markup language that is used to format plain text files. Markdown helps provide additional meaning to plain text files. The BLERF team often uses Markdown as an alternative to popular text editors like Microsoft Word.
+    * [Getting Started with MarkDown](https://www.markdownguide.org/getting-started/) -- A basic guide that explains: what is Markdown, why use Markdown, and how to get started with Markdown.
+    * [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) -- Provides a quick overview of the basic Markdown syntax.
+* [R Markdown](https://rmarkdown.rstudio.com/): A file format that combines R (programming language) and Markdown. R Markdown allows for “chunks” of R code to be included along with Markdown text to produce a nicely formatted HTML, PDF, or Word file.
+    * [Introduction to R Markdown](https://rmarkdown.rstudio.com/lesson-1.html)
+    * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+* [UBC Dataverse](https://borealisdata.ca/dataverse/ubc): UBC Dataverse Collection is a free research data repository for our faculty, students and staff. The platform makes it possible for researchers to deposit data, create appropriate metadata, obtain DOIs for permanent links, and maintain version control of their datasets.
+    * [UBC Dataverse Guide](https://osf.io/5u4f3) -- Provides a quick overview on how to deposit, manage, and share data on UBC's Dataverse.
+
+* * *
+
+## Funding
+
+### Conferences
+
+Jason will support each (master's) student in attending one conference per their degree. Funding ~is~ NOT available from UBCO (temporarily on hold, 2024/25), and you must apply for conference/travel funding and receive approval PRIOR TO the event:
+* [Irving K. Barber Faculty of Science Graduate Student Travel Grant](https://science.ok.ubc.ca/awards/travel-grants/). 
+    * \$500 for master's students 
+    * \$1000 for PhD students 
+    * *note: you must be presenting your work in order to be eligible for this grant*
+
+* [UBC Tuum Est Fund](https://students.ok.ubc.ca/campus-life/funding-opportunities/tuum-est/#:~:text=The%20maximum%20funding%20for%20a%20conference%20is%20%24500.):
+    * \$500
+    * Maximum of one conference per academic year can be funded through the Tuum Est Fund
+    * Rolling deadline, approximately once per month but the due dates are not consistent (Ex: June 19th, 2023, July 31st, 2023)
+
+Below is a list of awards that BLERF members should be eligible for. 
+
+**NOTE**: some awards can be used to increase personal stipends, while others can only be used for research purposes.
+
+*Undergraduate*
+* [UBC Undergraduate Research Awards (URA)](https://science.ok.ubc.ca/awards/undergraduate/ura/)
+* [The Natural Sciences and Engineering Research Council of Canada Undergraduate Student Research Award (NSERC USRA)](https://science.ok.ubc.ca/awards/undergraduate/nserc-usra/)
+
+*Graduate* 
+* [NSERC Canada Graduate Scholarships - Master's (CGS-M)](https://www.nserc-crsng.gc.ca/students-etudiants/pg-cs/cgsm-bescm_eng.asp)
+    * For stipends.  
+* [Indigenous Strategic Initiative Fund](https://isp.ubc.ca/implementation/isi-fund/)
+    * For research funds only, not for stipends. 
+* [Brink-McClean Grassland Conservation Fund](https://www.naturetrust.bc.ca/about/scholarships-funds)
+    * For research funds only, not for stipends. 
+* [Stuntz Mycology Fund](https://stuntzfoundation.org/grants.html) 
+    * For research funds only, not for stipends. 
+
+* * *
+
+## Preregistration
+
+We aim to complete preregistrations for most new research projects in the BLERF lab. 
+
+Preregistration is the practice of documenting your research plan at the beginning of your study and storing that plan in a public repository. Completing a preregistration helps improve the transparency and reproducibility of your research.
+
+Below are a few useful resources for preparing your own preregistration:  
+
+* Example preregistration from the BLERF lab: [Here](https://doi.org/10.17605/OSF.IO/MK3QE). 
+* Guide to creating a preregistration on OSF: [Here](https://help.osf.io/article/145-preregistration). 
+* More example preregistrations submitted by BLERF members: [Here](https://osf.io/64cwf/wiki/BLERF%20Pre-registrations/). 
+
+To add: remember to put statement about data management/archiving in pre-reg, i.e. in Dataverse
+
+* * *
+
+## BLERF Server
+
+The BLERF Server (the “P” drive) should be used for regular (at least weekly) backup of all your work.
+
+See the folowing guide on how to gain access: [Here](https://knowit.ok.ubc.ca/article/how-to-access-your-research-folder-p-drive-1088.html). 
+
+**Note:** Before you attempt to access the BLERF server, ask Jason if you have been provided access. 
+
+When you do get access, please go to the BLERF > Students folder, and create a new folder using your last name as the folder name. That’s where you’ll store all your stuff. Remember to follow best practices in data management. At the very least, create a `README.txt` file for every directory you create.
+
+## Authorship Conventions
+
+A very general guideline is that authorship is warranted if a person contributes to at least two of these: 
+
+* Designing the study. 
+* Acquiring the data. 
+* Analyzing the data. 
+* Writing the paper. 
+
+**All authors** must agree on what is finally submitted for publication, and must agree to be fully accountable for what is submitted.
+
+However, the most important advice is that authorship should be discussed at the outset of any collaboration. 
+
+## Data Ownership Conventions
+
+In general, data collected as part of BLERF activities will be archived on Dataverse, and publicly accessible (sometimes after a suitable embargo period).
+
+The primary collectors of the data (e.g. graduate students) are, by default, expected to maintain rights to the data, as will the primary advisor (Dr. Pither), who will be the steward of the data unless otherwise arranged at the outset of the collaboration.
+
+Exceptions to these general policies include: 
+
+* Data collected as part of partnerships with Indigenous partners, who will decide if, how, and by whom data will be archived and accessed, following [OCAP Principles](https://fnigc.ca/ocap-training/).
+* Sensitive data of any sort, which will be managed according to appropriate jurisdictional guidelines.
+
+Please also consult UBC's guidelines about [authorship and data ownership](https://www.grad.ubc.ca/intellectual-property-guide/joint-authorship-or-inventorship).  That same webpage has lots of other good resources!
+
+* * *
+
+## Networking
+
+Tips on how to build relationships and stay connected to the UBCO community.
+
+- Introduce yourself to fantastic Biology admin assistants.
+- Introduce yourself to other faculty whose interests overlap.
+- Join the Biology Graduate Student Society (BGSS)
+- Sign up to Biodiversity Research Centre listserve:
+
+The main mailing list for Biodiversity Centre activities, including the Biodiversity Research seminar series on Wednesdays. To subscribe, send email to research-request@zoology.ubc.ca with "subscribe" in the subject.
+
+* * *
+
+## Career & Personal Development
+
+Tips on how to get the most out of your time at UBCO.
+
+- Research workshop / skills-development opportunities.
+- Identify skills gaps.
+- Help organize workshops.
+- Explore the resources UBCO offers around [Equity, Diversity, and Inclusion](https://equity.ok.ubc.ca).
+- Research internal (UBC) and external scholarship opportunities (including NSERC).
+- Keep an eye out for conference opportunities, ask committee members for suggestions.
+- Explore all the awesomeness that BC has to offer!
+- The [Centre for Scholarly Communication](https://csc.ok.ubc.ca/) offers workshops to support scholars in many different disciplines.
+- The UBC Library provides many useful workshops, including ones covering computing / coding skills. See [here](https://libcal.library.ubc.ca/calendar/?cid=-1&t=g&d=0000-00-00&cal=-1&ct=33914&inc=0)
+
+* * *
+
+## UBCO Campus Contacts and Resources
+
+* [Centre for Scholarly Communication](https://csc.ok.ubc.ca/) -- The Centre for Scholarly Communication functions as an information hub for research support services at UBC Okanagan.
+* [Student Services](https://ok.ubc.ca/about/campus-services/) -- A list of services available to UBC Okanagan students.
+* [UBC's Indigenous Centre](https://students.ok.ubc.ca/indigenous-students/aboriginal-centre/) -- Committed to enriching the quality of the student experience for Indigenous students.
+* [Student Learning Hub](https://students.ok.ubc.ca/academic-success/learning-hub/)-- Free and flexible learning supports and resources.
+
+* * *
+
+## Other Resources
+* [Paying taxes in Canada][2] - A short guide with relevant information if you just moved to Canada.
+    *  For US students who have income within the year from the US - you will likely need to seek outside help with taxes (the UBCO tax clinic will not help you). Do this as soon as you get your tax forms!
+* Car insurance: because you are a student, you're not required to register your vehicle in BC nor get BC insurance (though do check that your insurance does cover accidents outside of your home country). ICBC does require you to get an exemption to the insurance/registration requirement within 30 days of arrival: [ICBC insurance for students](https://www.icbc.com/insurance/moving-travelling/Pages/insurance-students-military-tourists.aspx)
+
+
+  [1]: https://files.osf.io/v1/resources/64cwf/providers/osfstorage/647e58f2bbe5040029bb7ce1?mode=render
+  [2]: https://docs.google.com/document/d/1hwfyQCOSINEiyVFh1xhEROCnY-9q58MpC60KeQBcFS0/edit#heading=h.wxk9w8ef56z8
